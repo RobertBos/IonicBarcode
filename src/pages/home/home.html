@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Barcodes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div>
+    <p>Type text:</p>
+    <div style="border-color:grey; border-style: solid; border-radius: 5px;">
+      <ion-input type="text" [(ngModel)]='barcodeText' 
+        (input)='onBarcodeChange($event.target.value)'
+        style="border: black; border-width: 10px">
+      </ion-input>
+    </div>
+		<p>code128</p>
+    <svg id="code128" style="width: 100%"></svg>
+    <p>code39</p>
+    <svg id="code39" style="width: 100%"></svg>
+	</div>
+  <button ion-button (click)="scanBarcode($event)" style="width: 100%">Scan barcode</button>
+</ion-content>
